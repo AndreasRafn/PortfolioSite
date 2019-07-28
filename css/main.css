@@ -36,6 +36,12 @@ h1 {
   font-size: 2em;
 }
 
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0;
+}
+
 header {
   width: 100%;
   border-bottom: 1px solid #7d97ad; /*separator line cf. mockup*/
@@ -54,7 +60,7 @@ header {
 .title-section {
   text-transform: uppercase;
   text-align: center;
-  padding: 0px 20px 20px;
+  padding: 0 20px 20px;
   align-self: center;
   max-width: 100%;
   font-size: 40px;
@@ -74,7 +80,7 @@ header {
 }
 
 .featured-work-section {
-  padding: 0px 20px;
+  padding: 0 20px;
   transition: padding 1s;
   text-align: center;
 }
@@ -98,19 +104,13 @@ header {
   width: 100%;
 }
 
-.featured-work-item-title {
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 0px;
-}
-
 .featured-work-item-url {
   /*a few measures ensures that long urls are truncated properly*/
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  padding: 0px 0px 0px;
-  margin: 0px 20px 0px; /*margin consistent with mockup*/
+  padding: 0 0px 0px;
+  margin: 0 20px 0px; /*margin consistent with mockup*/
   line-height: 48px; /*sized for touch input*/
 }
 
@@ -129,17 +129,19 @@ header {
 }
 
 /*media queries*/
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) {  
   /*shift from logo on top and title beneath to logo to the left and title to the right*/
   header {
     flex-direction: row;
     justify-content: space-between;
   }
+
   /*right alignment of text */
   .title-section {
     text-align: right;
     padding: 20px;
-  }  
+  }
+
   /*shift from one element per row to two elements per row
   spacing between each column will remain at 10px consistently*/
   .featured-work-item {
@@ -154,33 +156,41 @@ header {
     margin-left: auto;
     margin-right: auto;
   }
+
   /*at fixed content width we can set layout variables explicitly with their 
   best values for 960px*/
   #logo {
     width: 60px;
-    padding-left: 0px;
+    padding-left: 0;
   }
+
   #banner {
     padding-top: 20px;
   }
+
   .title-section {
-    padding-right: 0px;
+    padding-right: 0;
   }
+
   .page-title {
     font-size: 30px;
   }
+
   .page-subtitle {
     font-size: 18px;
   }
+
   .featured-work-section {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
   }
+
   /*shift from one element per row to three elements per row
   spacing between each column will remain at 10px consistently*/
   .featured-work-item {
     width: calc(33.33% - 6.67px);
   }
+
   /*adding spacing after the last element will ensure that
   layout responds consistently as intended regardles of the number
   of items. When only one element is in the last row, the after item 
