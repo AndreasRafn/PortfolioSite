@@ -1,0 +1,194 @@
+/*set values that apply for all elements in the document*/
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 12px;
+  color: #2d3c49;
+}
+
+header,
+nav,
+footer,
+section,
+article,
+div {
+  box-sizing: border-box; /*preffered to account for borders, padding etc. the affects dimensions, 
+  cf.:https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+}
+
+img,
+embed,
+object,
+video {
+  max-width: 100%; /*avoid overflowing or empty space to ensure responsiveness for visual content elements, 
+  as recommended in lesson 2.7.9*/
+}
+
+h1 {
+  color: #7d97ad;
+  font-size: 2em;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid #7d97ad; /*separator line cf. mockup*/
+  height: auto;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  /*a few measures to ensure that responsiveness functions as 
+    intended down to around 150px viewport width, which we consider good enough*/
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-section {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0px 20px 20px;
+  align-self: center;
+  max-width: 100%;
+  font-size: 40px;
+  white-space: nowrap;
+  transition: padding 1s; /* ensures subtle transition of layout differences across 
+  breakpoints*/
+}
+
+.page-title {
+  font-size: calc(0.5em + 1vw); /*font size fluidly adapts to viewport size*/
+  max-width: 100%;
+}
+
+.page-subtitle {
+  font-size: calc(0.25em + 0.8vw); /*font size fluidly adapts to viewport size*/
+  max-width: 100%;
+}
+
+.featured-work-section {
+  padding: 0px 20px;
+  transition: padding 1s;
+  text-align: center;
+}
+
+.featured-work-container {
+  display: flex;
+  flex-direction: row; /* row based left to right layout of elements
+  regardless of viewport size. variable item sizing is used to define number 
+  of items per row*/
+  flex-wrap: wrap;
+  justify-content: space-between; /*used with breakpoints and ::after 
+  to ensure consistent spacing of items regardless of viewport size*/
+}
+
+.featured-work-item {
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.featured-work-item-image {
+  width: 100%;
+}
+
+.featured-work-item-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.featured-work-item-url {
+  /*a few measures ensures that long urls are truncated properly*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0px 0px 0px;
+  margin: 0px 20px 0px; /*margin consistent with mockup*/
+  line-height: 48px; /*sized for touch input*/
+}
+
+#logo {
+  padding: 20px;
+  width: calc(3em + 2vw); /*logo size fluidly adapts to viewport size*/
+  align-self: center;
+  box-sizing: content-box;
+  transition: padding 1s; /* ensures subtle transition of layout differences across 
+  breakpoints*/
+}
+
+#banner {
+  transition: padding 1s; /* ensures subtle transition of layout differences across 
+  breakpoints*/
+}
+
+/*media queries*/
+@media screen and (min-width: 500px) {
+  /*shift from logo on top and title beneath to logo to the left and title to the right*/
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  /*right alignment of text */
+  .title-section {
+    text-align: right;
+    padding: 20px;
+  }  
+  /*shift from one element per row to two elements per row
+  spacing between each column will remain at 10px consistently*/
+  .featured-work-item {
+    width: calc(50% - 5px);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  /*size of content stays at maximum 960px and margins are added to the sides*/
+  html {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*at fixed content width we can set layout variables explicitly with their 
+  best values for 960px*/
+  #logo {
+    width: 60px;
+    padding-left: 0px;
+  }
+  #banner {
+    padding-top: 20px;
+  }
+  .title-section {
+    padding-right: 0px;
+  }
+  .page-title {
+    font-size: 30px;
+  }
+  .page-subtitle {
+    font-size: 18px;
+  }
+  .featured-work-section {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  /*shift from one element per row to three elements per row
+  spacing between each column will remain at 10px consistently*/
+  .featured-work-item {
+    width: calc(33.33% - 6.67px);
+  }
+  /*adding spacing after the last element will ensure that
+  layout responds consistently as intended regardles of the number
+  of items. When only one element is in the last row, the after item 
+  will be positioned in the right side to ensure that the item sticks 
+  to the left side due to space-between. when two elements are in the
+  the last row it ensure consistent 10px spacing between items*/
+  .featured-work-container::after {
+    content: "";
+    width: calc(33.33% - 6.67px);
+  }
+}
