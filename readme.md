@@ -19,4 +19,5 @@ An Internet Browser
 ## Acknowledgments
 
 * Inspired by materials provided by the [Udacity Front-End Developer Nanodegree](https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001)
+* Uses free to use photo material from [Unsplash](https://unsplash.com/) by Marko Hovat, Viktor Talashuk, and Kelly Sikkema.
 
