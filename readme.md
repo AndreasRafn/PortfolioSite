@@ -1,6 +1,6 @@
 # Portfolio Site
 
-Portfolio site showcasing a portfolio of featured work. At this point there is no real content, simply placeholders to demonstrate functionality. The site is the first project submission on the Udacity Front-End Developer Nanodegree.
+Portfolio site to showcase a portfolio of featured work. At this point there is no real content, simply placeholders to demonstrate functionality. The site is the first project submission on the Udacity Front-End Developer Nanodegree.
 
 ### Prerequisites
 
