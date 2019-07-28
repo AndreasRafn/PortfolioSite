@@ -142,6 +142,11 @@ header {
     padding: 20px;
   }
 
+  /*right alignment of particularly section header*/
+  .featured-work-section {  
+    text-align: left;
+  }
+
   /*shift from one element per row to two elements per row
   spacing between each column will remain at 10px consistently*/
   .featured-work-item {
