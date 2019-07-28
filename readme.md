@@ -2,6 +2,8 @@
 
 Portfolio site to showcase a portfolio of featured work. At this point there is no real content, simply placeholders to demonstrate functionality. The site is the first project submission on the Udacity Front-End Developer Nanodegree.
 
+Try live here: [https://andreasrafn.github.io/PortfolioSite/](https://andreasrafn.github.io/PortfolioSite/)
+
 ### Prerequisites
 
 An Internet Browser
